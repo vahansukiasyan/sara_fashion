@@ -1,0 +1,159 @@
+.widget {
+    border-bottom: 2px solid #ebebeb;
+    padding-bottom: 50px;
+}
+
+.widget:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+
+
+
+
+
+
+
+
+.widget.color .widget-desc ul li a {
+    width: 25px;
+    height: 25px;
+    display: block;
+    background-color: #000;
+    position: relative;
+    z-index: 1;
+}
+
+.widget.color .widget-desc ul li.gray a {
+    background-color: #d7d7d7;
+}
+
+.widget.color .widget-desc ul li.red a {
+    background-color: #fd4f4f;
+}
+
+.widget.color .widget-desc ul li.yellow a {
+    background-color: #fcf29c;
+}
+
+.widget.color .widget-desc ul li.green a {
+    background-color: #8fc99c;
+}
+
+.widget.color .widget-desc ul li.teal a {
+    background-color: #bc83b1;
+}
+
+.widget.color .widget-desc ul li.cyan a {
+    background-color: #9ee7f4;
+}
+
+.widget.color .widget-desc ul li a:after {
+    width: calc(100% + 6px);
+    height: calc(100% + 6px);
+    display: block;
+    border: 2px solid #ffcccc;
+    position: absolute;
+    z-index: -1; 
+    top: -3px;
+    left: -3px;
+    content: "";
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+}
+
+.widget.color .widget-desc ul li a:hover:after,
+.widget.color .widget-desc ul li a:focus:after {
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+
+.widget.color .widget-desc ul li a span {
+    font-size: 12px;
+    display: block;
+    padding-top: 35px;
+}
+.karl-table {
+    display: table;
+    z-index: 9;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+.karl-table-cell {
+    display: table-cell;
+    vertical-align: middle;
+}
+karl-btn {
+    display: inline-block;
+    min-width: 170px;
+    height: 55px;
+    color: #fff;
+    border: 3px solid #fff;
+    border-radius: 2px;
+    padding: 0 30px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 49px;
+}
+
+.karl-btn:hover,
+.karl-btn:focus {
+    font-weight: 700;
+    color: #fff;
+    background-color: #ffcccc;
+    border-color: #ffcccc;
+}
+<?php
+                $sql5 ="SELECT * FROM new_arrivals";
+$result5 = mysqli_query($con,$sql5);
+					if(mysqli_num_rows($result5) > 0){
+				while($row5 = mysqli_fetch_assoc($result5)){
+                    if($row5['id'] == 1){
+                            echo "<button class='btn active' data-filter='*'>".$row5['title']."<button>";
+                    }
+                    elseif($row5['id'] == 2){
+                        echo "<button class='btn' data-filter='.women'>".$row5['title']."<button>";
+                    } 
+                    elseif($row5['id'] == 3){
+                        echo "<button class='btn' data-filter='.acces'>".$row5['title']."<button>";
+                    }
+                    else{
+                        echo "<button class='btn' data-filter='.kids>".$row5['title']."<button>";
+                    }
+													  	}
+													  }
+									else{
+							echo "0 Results";
+			}
+                                        	?> 
+
+.quickview_pro_img .hover_img {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+}
+.quickview_pro_img:hover .hover_img {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+.single_catagory_area:after {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+}
+.single_catagory_area:hover:after {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+}
+.product-img .product-quicview {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+}
+.product-img:hover .product-quicview {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+.widget.color .widget-desc ul li a:after {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+}
+.widget.color .widget-desc ul li a:hover:after,
+.widget.color .widget-desc ul li a:focus:after {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
