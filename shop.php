@@ -24,62 +24,6 @@
 </head>
 
 <body>
-    <div class="catagories-side-menu">
-        <!-- Close Icon -->
-        <div id="sideMenuClose">
-            <i class="ti-close"></i>
-        </div>
-        <!--  Side Nav  -->
-        <div class="nav-side-menu">
-            <div class="menu-list">
-                <h6>Categories</h6>
-                <ul id="menu-content" class="menu-content collapse out">
-                    <!-- Single Item -->
-                    <li data-toggle="collapse" data-target="#women" class="collapsed active">
-                        <a href="#">Woman wear <span class="arrow"></span></a>
-
-                    </li>
-                    <!-- Single Item -->
-
-                    <!-- Single Item -->
-                    <li data-toggle="collapse" data-target="#kids" class="collapsed">
-                        <a href="#">Children <span class="arrow"></span></a>
-                        <ul class="sub-menu collapse" id="kids">
-                            <li><a href="#">Children Dresses</a></li>
-                            <li><a href="#">Mini Dresses</a></li>
-                        </ul>
-                    </li>
-                    <!-- Single Item -->
-                    <li data-toggle="collapse" data-target="#bags" class="collapsed">
-                        <a href="#">Bags &amp; Purses <span class="arrow"></span></a>
-                        <ul class="sub-menu collapse" id="bags">
-                            <li><a href="#">Bags</a></li>
-                            <li><a href="#">Purses</a></li>
-                        </ul>
-                    </li>
-                    <!-- Single Item -->
-                    <li data-toggle="collapse" data-target="#eyewear" class="collapsed">
-                        <a href="#">Eyewear <span class="arrow"></span></a>
-                        <ul class="sub-menu collapse" id="eyewear">
-                            <li><a href="#">Eyewear Style 1</a></li>
-                            <li><a href="#">Eyewear Style 2</a></li>
-                            <li><a href="#">Eyewear Style 3</a></li>
-                        </ul>
-                    </li>
-                    <li data-toggle="collapse" data-target="#bedroom" class="collapsed">
-                        <a href="#">Bedroom<span class="arrow"></span></a>
-                        <ul class="sub-menu collapse" id="bedroom">
-                            <li><a href="#">Pillows</a></li>
-                            <li><a href="#">blanket</a></li>
-                        </ul>
-                    </li>
-                    <!-- Single Item -->
-
-                </ul>
-            </div>
-        </div>
-    </div>
-
     <div id="wrapper">
 
         <!-- ****** Header Area Start ****** -->
@@ -95,12 +39,14 @@
                                 <div class="top_logo">
                                     <a href="index.php"><img src="img/core-img/logo.png" alt=""></a>
                                 </div>
-                                <!-- Cart & Menu Area -->
-                                <div class="header-cart-menu d-flex align-items-center ml-auto">
-                                    <!-- Cart Area -->
-
-                                    <div class="header-right-side-menu ml-15">
-                                        <a href="#" id="sideMenuBtn"><i class="ti-menu" aria-hidden="true"></i></a>
+                                <!-- Logo End -->
+                                <img src="img/bg-img/arm-flag.png" class="flag1">
+                                <img src="img/bg-img/usa-flag.png" class="flag2">
+                                <div class="profile">
+                                    <img src="img/bg-img/unnamed.png" onclick="location.href='checkout.php';">
+                                    <div>
+                                        <p>Name</p>
+                                        <p>Surname</p>
                                     </div>
                                 </div>
                             </div>
@@ -167,7 +113,7 @@
         </header>
         <!-- ****** Header Area End ****** -->
 
-        <!-- ****** Top Discount Area Start ****** -->
+        <!--  Top Dis Stara -->
         <section class="top-discount-area d-md-flex align-items-center">
         <?php
        $sql2 ="SELECT * FROM sub_menu";
@@ -184,20 +130,8 @@
            echo "0 Results";
        }
    ?>
-            <!-- Single Discount Area -
-           <div class="single-discount-area big2">
-                <h5>Free Shipping &amp; Returns</h5>
-            </div>
-            < Single Discount Area 
-            <div class="single-discount-area big1">
-                <h5>20% Discount for all dresses</h5>
-            </div>
-            Single Discount Area 
-            <div class="single-discount-area big2">
-                <h5>20% Discount for students</h5>
-            </div> -->
         </section>
-        <!-- ****** Quick View Modal Area Start ****** -->
+        <!-- View Start * -->
         <div class="modal fade" id="quickview" tabindex="-1" role="dialog" aria-labelledby="quickview"
             aria-hidden="true">
             <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
@@ -241,7 +175,7 @@
                 </div>
             </div>
         </div>
-        <!-- ****** Quick View Modal Area End ****** -->
+        <!-- View Area End-->
 
         <section class="shop_grid_area section_padding_100">
             <div class="container">
@@ -255,31 +189,52 @@
                                     <h6 class="mb-0">Catagories</h6>
                                     <div class="menu-list">
                                         <ul id="menu-content2" class="menu-content collapse out">
+                                        <?php
+                                    $sql3 ="SELECT * FROM categories WHERE id=1";
+                                    $result3= mysqli_query($con,$sql3);
+                                    if(mysqli_num_rows($result3) > 0){
+                                        while($row3 = mysqli_fetch_assoc($result3)){
+                                            echo "<li data-toggle='collapse' data-target='#".$row3['description']."'>";
+                                            echo "<a href='#'>" . $row3['title'] . "</a>";
+                                            echo "<ul class='sub-menu collapse show' id='".$row3['description']."'></ul>";
+                                            echo "</li>";
+                                        }
+                                    }else{
+                                        echo "0 Results";
+                                    }
+                                ?>
                                             <!-- Single Item -->
-                                            <li data-toggle="collapse" data-target="#women2">
-                                                <a href="#">Woman wear</a>
-                                                <ul class="sub-menu collapse show" id="women2">
-
-                                                </ul>
-                                            </li>
+                                            <?php
+                                    $sql3 ="SELECT * FROM categories WHERE id=2";
+                                    $result3= mysqli_query($con,$sql3);
+                                    if(mysqli_num_rows($result3) > 0){
+                                        while($row3 = mysqli_fetch_assoc($result3)){
+                                            echo "<li data-toggle='collapse' class='collapsed' data-target='#".$row3['description']."'>";
+                                            echo "<a href='#'>" . $row3['title'] . "</a>";
+                                            echo "<ul class='sub-menu collapse' id='".$row3['description']."'></ul>";
+                                            echo "</li>";
+                                        }
+                                    }else{
+                                        echo "0 Results";
+                                    }
+                                ?>
                                             <!-- Single Item -->
-                                            <!-- Single Item -->
-                                            <li data-toggle="collapse" data-target="#kids2" class="collapsed">
-                                                <a href="#">Children</a>
-                                                <ul class="sub-menu collapse" id="kids2">
-                                                </ul>
-                                            </li>
-                                            <!-- Single Item -->
-                                            <li data-toggle="collapse" data-target="#bags2" class="collapsed">
-                                                <a href="#">Bags &amp; Purses</a>
-                                                <ul class="sub-menu collapse" id="bags2"> </ul>
-                                            </li>
-                                            <!-- Single Item -->
-                                            <li data-toggle="collapse" data-target="#eyewear2" class="collapsed">
-                                                <a href="#">Eyewear</a>
-                                                <ul class="sub-menu collapse" id="eyewear2"> </ul>
-                                            </li>
-                                            <!-- Single Item -->
+                                            <?php
+                                    $sql3 ="SELECT * FROM categories WHERE id=3";
+                                    $result3= mysqli_query($con,$sql3);
+                                    if(mysqli_num_rows($result3) > 0){
+                                        while($row3 = mysqli_fetch_assoc($result3)){
+                                            echo "<li data-toggle='collapse' class='collapsed' data-target='#".$row3['description']."'>";
+                                            echo "<a href='#'>" . $row3['title'] . "</a>";
+                                            echo "<ul class='sub-menu collapse' id='".$row3['description']."'></ul>";
+                                            echo "</li>";
+                                        }
+                                    }else{
+                                        echo "0 Results";
+                                    }
+                                ?>
+                                <!-- Single Item -->
+                                            
                                             <li data-toggle="collapse" data-target="#footwear2" class="collapsed">
                                                 <a href="#">Footwear</a>
                                                 <ul class="sub-menu collapse" id="footwear2">
@@ -294,16 +249,16 @@
                                 <h6 class="widget-title mb-30">Filter by Price</h6>
                                 <div class="widget-desc">
                                     <div class="slider-range">
-                                        <div data-min="0" data-max="3000" data-unit="$"
+                                        <div data-min="0" data-max="200000" data-unit="֏"
                                             class="slider-range-price ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"
-                                            data-value-min="0" data-value-max="1350" data-label-result="Price:">
+                                            data-value-min="0" data-value-max="135500" data-label-result="Price:">
                                             <div class="ui-slider-range ui-widget-header ui-corner-all"></div>
                                             <span class="ui-slider-handle ui-state-default ui-corner-all"
                                                 tabindex="0"></span>
                                             <span class="ui-slider-handle ui-state-default ui-corner-all"
                                                 tabindex="0"></span>
                                         </div>
-                                        <div class="range-price">Price: 0 - 1350</div>
+                                        <div class="range-price">Price: 0 - 135500</div>
                                     </div>
                                 </div>
                             </div>
@@ -420,7 +375,6 @@
                                         <h4 class="product-price">$39.90</h4>
                                         <p>Jeans midi cocktail dress</p>
                                         <a href="#" class="add-to-cart-btn">ADD TO CART</a>
-                                        <!-- Add to Cart -->
                                     </div>
                                 </div>
 
@@ -573,9 +527,8 @@
                 </div>
             </div>
         </section>
-
-        <!-- ****** Footer Area Start ****** -->
-               <footer class="footer_area">
+ <!-- Footer Start -->
+ <footer class="footer_area">
             <div class="container">
                 <div class="row">
                     <!-- Single Footer Area Start -->
@@ -585,25 +538,27 @@
                                 <img src="img/core-img/logo.png" alt="">
                             </div>
                             <div class="copywrite_text d-flex align-items-center">
-                                <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> <br> All rights reserved | <br> <a href="https://colorlib.com" target="_blank">GTC STUDENTS</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                                <p>
+                                    Copyright &copy;<script>
+                                        document.write(new Date().getFullYear());
+                                    </script> <br> All rights reserved | <br> <a href ="#"
+                                        target="_blank">GTC STUDENTS</a>
+                                 </p>
                             </div>
                         </div>
                     </div>
-                    <!-- Single Footer Area Start -->
+                    <!-- Single Footer Start -->
                     <div class="col-12 col-sm-6 col-md-3 col-lg-2">
                         <div class="single_footer_area">
                             <ul class="footer_widget_menu">
-                                <li><a href="home.html">Home</a></li>
-                                <li><a href="about.html">About</a></li>
-                                <li><a href="checkout.html">Chechout</a></li>
-                                <li><a href="#">Shop</a></li>
-                                <li><a href="#">Contact</a></li>
+                                <li><a href="index.php">Home</a></li>
+                                <li><a href="about.php">About</a></li>
+                                <li><a href="checkout.php">Chechout</a></li>
+                                <li><a href="shop.php">Shop</a></li>
                             </ul>
                         </div>
                     </div>
-                    <!-- Single Footer Area Start -->
+                    <!-- Single Footer Start -->
                     <div class="col-12 col-sm-6 col-md-3 col-lg-2">
                         <div class="single_footer_area">
                             <ul class="footer_widget_menu">
@@ -613,14 +568,17 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> <br> 
                             </ul>
                         </div>
                     </div>
-                    <!-- Single Footer Area Start -->
+                    <!-- Single Footer Start -->
                     <div class="col-12 col-lg-5">
                         <div class="single_footer_area">
-                             <label><input type="text" class="sara-footer-input" placeholder="Comment ... " name="comment_input"><input type="submit" name="submit" value=" POST " class="sara-footer-submit"></label>
-                             <p>You can write your impressin about our site. If you are not safisfied with our side you can write comment or can send support. IT IS VERY IMPORTANT FOR US  </p>
+                            <label><input type="text" class="sara-footer-input" placeholder="Comment ... "
+                                    name="comment_input"><input type="submit" name="submit" value=" POST "
+                                    class="sara-footer-submit"></label>
+                            <p>You can write your impressin about our site. If you are not safisfied with our side you
+                                can write comment or can send support. IT IS VERY IMPORTANT FOR US </p>
                             <div class="subscribtion_form">
                                 <form action="#" method="post">
-                                    
+
                                 </form>
                             </div>
                         </div>
@@ -628,35 +586,44 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> <br> 
                 </div>
                 <div class="line"></div>
 
-                <!-- Footer Bottom Area Start -->
+                <!-- Footer Bottom Start -->
                 <div class="footer_bottom_area">
                     <div class="row">
                         <div class="col-12">
                             <div class="footer_social_area text-center">
-                                
-                                <a href="#"><i class="fa fa-facebook" aria-hidden="true" target="_blank" style="font-size: 25px"></i></a>
-                                <a href="#"><i class="fa fa-instagram" aria-hidden="true"  target="_blank" style="font-size: 25px"></i></a>
+
+                                <a href="#"><i class="fa fa-facebook" aria-hidden="true" target="_blank"
+                                        style="font-size: 25px"></i></a>
+                                <a href="#"><i class="fa fa-instagram" aria-hidden="true" target="_blank"
+                                        style="font-size: 25px"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </footer>
-        <!-- ****** Footer Area End ****** -->
-    </div>
-    <!-- /.wrapper end -->
 
-    <!-- jQuery (Necessary for All JavaScript Plugins) -->
+        <!--  Footer End-->
+    </div>
+   
+    <!-- jQuery  && JSes-->
     <script src="js/jquery/jquery-2.2.4.min.js"></script>
-    <!-- Popper js -->
     <script src="js/popper.min.js"></script>
-    <!-- Bootstrap js -->
     <script src="js/bootstrap.min.js"></script>
-    <!-- Plugins js -->
     <script src="js/plugins.js"></script>
-    <!-- Active js -->
     <script src="js/active.js"></script>
 
+
+    <script>
+        var scroll = document.getElementById("scrollUp");
+        var scroll, style, display = "none";
+        if (scrollTo(window, {
+                top: 40
+            })) {
+            var scroll, style, display = "block";
+        }
+    </script>
+    <i class="ti-angle-up" aria-hidden="true"></i>
 </body>
 
 </html>

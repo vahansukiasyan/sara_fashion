@@ -8,7 +8,7 @@ $db_name="sara";
     if(!$con){
     	die("Error:" .  mysqli_connect_error());
     }
-
+  
 
 
 ?>

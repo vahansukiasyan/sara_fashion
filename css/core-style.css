@@ -117,22 +117,14 @@ a:focus{
     color: #000000;
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
-    padding-left: 10px;
 }
 ul,ol {
     margin: 0;
 }
-
 ol li,
 ul li {
     list-style: outside none none;
 }
-
-img {
-    height: auto;
-    max-width: 100%;
-}
-
 .background-overlay,
 .background-overlay-white {
     position: relative;
@@ -151,6 +143,16 @@ img {
     height: 100%;
     content: "";
 }
+.check-img{
+    width: 200px !important;
+    height: 100px !important;
+    margin-left:600px !important;
+}
+img {
+    height: auto;
+    max-width: 100%;
+}
+
 
 .background-overlay:before {
     background-color: rgba(0, 0, 0, 0.5);
@@ -425,25 +427,6 @@ img {
     position: relative;
     z-index: 500;
 }
-
-.header-right-side-menu>a {
-    width: 60px;
-    display: block;
-    height: 60px;
-    text-align: center;
-    line-height: 60px;
-    font-size: 24px;
-    background-color: #cecece;
-    color: #fff;
-    border-radius: 50%;
-}
-
-.header-right-side-menu>a:focus,
-.header-right-side-menu>a:hover {
-    background-color: #ffb3b3;
-    color: #fff;
-}
-
 .hero_meta_area .cart:hover .cart_quantity {
     background-color: #000000;
     color: #fff;
@@ -747,13 +730,11 @@ img {
     float:right;
     color: #9f9f9f;
 }
-
 .menu-content ul .sub-menu li,
 .menu-content li .sub-menu li {
     border: none;
     border-bottom: 1px solid #ebebeb;
     margin-left: 0;
-    padding-left: 5px;
 }
 
 .menu-content li {
@@ -1924,36 +1905,6 @@ footer {
     line-height: 60px;
     padding: 0;
 }
-
-
-.karl-checkout-btn:hover,
-.karl-checkout-btn:focus {
-    background-color: #3a3a3a;
-    color: #fff;
-    font-weight: 700;
-}
-
-/* -----------------------
-:: 19.0 Checkout Area CSS
------------------------ */
-
-.checkout_details_area form label {
-    font-size: 12px;
-    text-transform: uppercase;
-}
-
-.checkout_details_area form label span {
-    color: #ffcccc;
-}
-
-.checkout_details_area form .form-control,
-.checkout_details_area form .custom-select {
-    height: 52px;
-    border: none;
-    background-color: #f4f2f8;
-    border-radius: 0;
-}
-
 .order-details-confirmation {
     width: 100%;
     border: 2px solid #ebebeb;
@@ -2065,3 +2016,131 @@ a:focus {
 .try-it {
     height: 100px !important;
 }
+.dis{
+    display: flex;
+}
+.big-div{
+    width: 560px;
+    margin:0 auto;
+    margin-bottom: 5%;
+}
+.small-div{
+    width: 560px;
+    height: 60px;
+    display: flex;
+    background-color:#ffcccc;
+}
+.sign{
+    border-right:1.5px solid gray ;
+    width: 35%;
+    font-family: cursive;
+    margin-left: 15%;
+    padding: 13px;
+    font-size: 25px;
+    cursor:pointer;
+}
+.log{
+    font-family: cursive;
+    margin-left: 15%;
+    padding: 13px;
+    font-size: 25px;
+    cursor: pointer;
+}
+.div{
+    width: 560px;
+    background-color:#cecece;
+    
+}
+.numb{
+          padding: 9px 25px;
+          margin: 8px 0;
+          box-sizing: border-box;
+          border: none;
+          background-color:#fff;
+          color:dimgray;
+          border-radius: 4px;
+          width: 86%;
+          margin-left:5%;
+   
+} 
+.numb2{
+    margin-right:10px;
+}
+
+.lab{
+    margin-left:3%;
+    font-family:cursive;
+}
+.err{
+    margin-left:3%;
+    color:#b94b46;
+}
+.subm{
+    background-color:#c1bebe;
+          border: none;
+          padding: 8px 15px;
+          color: white;
+          margin-top:2%;
+          margin-left:80%;
+          cursor: pointer;
+          border-radius: 4px;
+
+}
+.sign{
+    border-right:1.5px solid gray;
+    width: 35%;
+    font-family: cursive;
+    margin-left: 15%;
+    padding: 13px;
+    font-size: 25px;
+    cursor:pointer;
+    background: none;
+}
+.bl{
+    display: block!important;
+}
+.non{
+    display: none!Important;
+}
+.log{
+    font-family: cursive;
+    margin-left: 15%;
+    padding: 13px;
+    font-size: 25px;
+    cursor: pointer;
+}
+.div{
+    width: 560px;
+    background-color:#cecece; 
+}
+.div2{
+    width: 560px;
+    background-color:#cecece;
+    display: none; 
+}
+.flag1{
+   cursor: pointer;
+   margin-left:-101%; 
+}
+.flag2{
+    cursor: pointer;
+    margin-left:2%; 
+ }
+ .profile{
+    width: 150px;
+    height: 60px;
+    margin-left: 138%;
+    border: 1px solid #cecece;
+    display: flex;
+ }
+ .profile>div>p:first-child{
+     margin-top: 5px;
+ }
+ .profile>div>p{
+     color: #00000073;
+ }
+ .profile > img{
+    margin: 10px;
+    width: 40px;
+    cursor: pointer;
+ }
